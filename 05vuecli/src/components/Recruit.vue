@@ -55,7 +55,7 @@ export default {
   width: 100%;
   margin: 50px auto 0 auto;
   text-align: center;
-  background-image: url(../images/backc.png);
+  background-image: url(../assets/images/backc.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 3% 0 3% 0;

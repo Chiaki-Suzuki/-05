@@ -108,15 +108,20 @@ nav img {
   SP
 -------------------------*/
 @media screen and (max-width: 767px) {
+  .spnav {
+    display: block;
+  }
+
+  nav .inf2 p {
+    margin: 0;
+  }
   nav .inf2 a {
     color: #2b1f12;
-    position: absolute;
-    right: 5%;
-    bottom: 2em;
-    /*text-align: center;
-      margin: 0 0 20px 30px;
-      display: block;*/
-    float: right;
+    float: none;
+    position: static;
+    margin: 0 auto 5px auto;
+    text-align: center;
+    display: block;
   }
   nav .inf2 a:hover {
     color: #815629;
@@ -126,7 +131,7 @@ nav img {
     background-color: #2b1f12;
     padding: 0.2em 3.6vw;
     color: #fff;
-    margin: 0.2em;
+    margin: 0 0.2em;
     display: inline;
   }
   .nava2 a:hover {
@@ -152,7 +157,15 @@ nav img {
   }
   .spnav ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-content: space-around;
+    height: 70px;
+  }
+  nav li {
+    margin: 1% 1%;
+    background-color: #2b1f12;
+    padding: 0.5em 2em;
   }
   nav li a {
     text-decoration: none;

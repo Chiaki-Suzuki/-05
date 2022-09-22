@@ -51,7 +51,7 @@ export default {
   height: 23em;
   margin: 100px auto 0 auto;
   text-align: center;
-  background-image: url(../images/curry.png);
+  background-image: url(../assets/images/curry.png);
   background-repeat: no-repeat;
   background-position: 0 100px;
   /*background-size: ;*/
@@ -100,6 +100,10 @@ export default {
   SP
 -------------------------*/
 @media screen and (max-width: 767px) {
+.new {
+  background-position: -30px 240px;
+  background-size: 70%;
+}
   .scroll {
     width: 80%;
   }

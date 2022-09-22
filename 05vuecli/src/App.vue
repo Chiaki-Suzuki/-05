@@ -25,6 +25,16 @@ export default {
 /*-------------------------
   グローバル
 -------------------------*/
+body {
+  margin: 0;
+}
+
+ul, ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 p {
   color: #2b1f12;
 }
@@ -36,21 +46,21 @@ h1 {
 }
 
 h1:before {
-  content: url(../images/iconmin.png);
+  /* content: url(/images/iconmin.png); */
   position: relative;
   top: 5px;
   margin-right: 5px;
 }
 
 h2:after {
-  content: url(../images/lines.png);
+  /* content: url(/images/lines.png); */
   position: relative;
   bottom: 4px;
   margin: 0 10px 0 20px;
 }
 
 h2:before {
-  content: url(../images/lines.png);
+  /* content: url(/images/lines.png); */
   position: relative;
   bottom: 4px;
   margin: 0 20px 0 10px;
@@ -126,10 +136,10 @@ h1{
 }
 
 h2:after {
-    content: url(../images/linemin.png);
+    /* content: url(/images/linemin.png); */
 }
 h2:before {
-    content: url(../images/linemin.png);
+    /* content: url(/images/linemin.png); */
 }
 
 th{

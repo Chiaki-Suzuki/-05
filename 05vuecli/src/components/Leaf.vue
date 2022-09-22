@@ -36,7 +36,7 @@ export default {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  background-image: url(../images/backs2.png);
+  background-image: url(../assets/images/backs2.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 3% 0 3% 0;
@@ -62,7 +62,7 @@ export default {
 
 .leafimg {
   height: 400px;
-  background-image: url(../images/backh.png);
+  background-image: url(../assets/images/backh.png);
   background-repeat: no-repeat;
   background-size: 60%;
   background-position: 40% 0;
@@ -88,18 +88,20 @@ export default {
 -------------------------*/
 @media screen and (max-width: 767px) {
   .leafimg {
-    background-size: 80%;
+    background: none;
   }
   .bigp {
     font-size: 1em;
-    margin: 0 0 4% 45%;
-    width: 60%;
+    margin: 0 auto 4%;
+    width: 70%;
   }
   .leftp {
-    margin: 0 0 2% 30%;
+    margin: 0 auto 2%;
+    width: 85%;
   }
   .rightp {
-    margin: 0 0 0 50%;
+    margin: 0 auto;
+    width: 85%;
   }
 }
 </style>

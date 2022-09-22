@@ -46,7 +46,7 @@ export default {
 
 .hukidashi {
   height: 200px;
-  background-image: url(../images/hukidashi.png);
+  background-image: url(../assets/images/hukidashi.png);
   background-repeat: no-repeat;
   background-size: 600px 150px;
   background-position: 50%;
@@ -68,7 +68,7 @@ export default {
 }
 
 .telicon:after {
-  content: url(../images/icont.png);
+  content: url(../assets/images/icont.png);
   position: relative;
   top: 5px;
   margin: 0 10px 0 20px;

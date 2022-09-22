@@ -1,59 +1,59 @@
 <template>
   <section class="menu" id="menu">
     <div class="menuwhite">
-    <h1>メニュー</h1>
-    <div class="menu_seatch">
-      <p>表示変更：</p>
-      <select id="search" v-model="menuOrder">
-        <option value="all">全ての商品</option>
-        <option value="lunch">ランチ</option>
-        <option value="food">フード</option>
-        <option value="sweets">スウィーツ</option>
-        <option value="drink">ドリンク</option>
-      </select>
-    </div>
-    <div class="lunch" v-if="menuOrder === 'lunch' | menuOrder === 'all'">
-      <h2>ランチ</h2>
-      <figure v-for="lunchItem in lunch" v-bind:key="lunchItem.name">
-        <img v-bind:src="lunchItem.image" v-bind:alt="lunchItem.name">
-        <figcaption>
-          <h3>{{ lunchItem.name }}</h3>
-          <p>{{ lunchItem.desc }}</p>
-          <h4>￥{{ lunchItem.price }}</h4>
-          <p>{{ lunchItem.annotation }}
-          </p>
-        </figcaption>
-      </figure>
-    </div><!-- lunch end -->
-    <div class="food" v-if="menuOrder === 'food' | menuOrder === 'all'">
-      <h2>フード</h2>
-      <figure v-for="foodItem in food" v-bind:key="foodItem.name">
-        <img v-bind:src="foodItem.image" v-bind:alt="foodItem.name">
-        <figcaption>
-          <h3>{{ foodItem.name }}</h3>
-          <p>{{ foodItem.desc }}</p>
-          <h4>￥{{ foodItem.price }}</h4>
-          <p>{{ foodItem.annotation }}
-          </p>
-        </figcaption>
-      </figure>
-    </div><!-- food end -->
-    <div class="sweet" v-if="menuOrder === 'sweets' | menuOrder === 'all'">
-      <h2>スウィーツ</h2>
-      <figure v-for="sweetsItem in sweets" v-bind:key="sweetsItem.name">
-        <img v-bind:src="sweetsItem.image" v-bind:alt="sweetsItem.name">
-        <figcaption>
-          <h3>{{ sweetsItem.name }}</h3>
-          <p>{{ sweetsItem.desc}}</p>
-          <h4>￥{{ sweetsItem.price }}</h4>
-          <p>{{ sweetsItem.annotation }}
-          </p>
-        </figcaption>
-      </figure>
-    </div><!-- sweet end -->
-    <div class="drink" v-if="menuOrder === 'drink' | menuOrder === 'all'">
-      <h2>ドリンク</h2>
-      <figure v-for="drinkItem in drink" v-bind:key="drinkItem.name">
+      <h1>メニュー</h1>
+      <div class="menu_seatch">
+        <p>表示変更：</p>
+        <select id="search" v-model="menuOrder">
+          <option value="all">全ての商品</option>
+          <option value="lunch">ランチ</option>
+          <option value="food">フード</option>
+          <option value="sweets">スウィーツ</option>
+          <option value="drink">ドリンク</option>
+        </select>
+      </div>
+      <div class="lunch" v-if="menuOrder === 'lunch' | menuOrder === 'all'">
+        <h2>ランチ</h2>
+        <figure v-for="lunchItem in lunch" v-bind:key="lunchItem.name">
+          <img v-bind:src="lunchItem.image" v-bind:alt="lunchItem.name">
+          <figcaption>
+            <h3>{{ lunchItem.name }}</h3>
+            <p>{{ lunchItem.desc }}</p>
+            <h4>￥{{ lunchItem.price }}</h4>
+            <p>{{ lunchItem.annotation }}
+            </p>
+          </figcaption>
+        </figure>
+      </div><!-- lunch end -->
+      <div class="food" v-if="menuOrder === 'food' | menuOrder === 'all'">
+        <h2>フード</h2>
+        <figure v-for="foodItem in food" v-bind:key="foodItem.name">
+          <img v-bind:src="foodItem.image" v-bind:alt="foodItem.name">
+          <figcaption>
+            <h3>{{ foodItem.name }}</h3>
+            <p>{{ foodItem.desc }}</p>
+            <h4>￥{{ foodItem.price }}</h4>
+            <p>{{ foodItem.annotation }}
+            </p>
+          </figcaption>
+        </figure>
+      </div><!-- food end -->
+      <div class="sweet" v-if="menuOrder === 'sweets' | menuOrder === 'all'">
+        <h2>スウィーツ</h2>
+        <figure v-for="sweetsItem in sweets" v-bind:key="sweetsItem.name">
+          <img v-bind:src="sweetsItem.image" v-bind:alt="sweetsItem.name">
+          <figcaption>
+            <h3>{{ sweetsItem.name }}</h3>
+            <p>{{ sweetsItem.desc}}</p>
+            <h4>￥{{ sweetsItem.price }}</h4>
+            <p>{{ sweetsItem.annotation }}
+            </p>
+          </figcaption>
+        </figure>
+      </div><!-- sweet end -->
+      <div class="drink" v-if="menuOrder === 'drink' | menuOrder === 'all'">
+        <h2>ドリンク</h2>
+        <figure v-for="drinkItem in drink" v-bind:key="drinkItem.name">
           <img v-bind:src="drinkItem.image" v-bind:alt="drinkItem.name">
           <figcaption>
             <h3>{{ drinkItem.name }}</h3>
@@ -61,8 +61,9 @@
             <p>{{ drinkItem.annotation }}
             </p>
           </figcaption>
-      </figure>
-    </div><!-- drink end -->
+        </figure>
+      </div><!-- drink end -->
+    </div>
   </section>
 </template>
 
@@ -81,7 +82,7 @@ export default {
   height: 100%;
   margin: 0 auto;
   text-align: center;
-  background-image: url(../images/backd.png);
+  background-image: url(../assets/images/backd.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 3% 0 3% 0;
