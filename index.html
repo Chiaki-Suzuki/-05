@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex,nofollow,noarchive">
+        <title>カフェ『Leaf』</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/sp.css">
+        <style>
+            [v-clock] {
+                opacity: 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="pcnav">
+                <span class="inf">
+                    <p><a href="#contact">お問い合わせ</a></p>
+                </span>
+                <div class="navmenu">
+                    <div class="navli"><img src="images/logob.png"></div>
+                    <div class="navli"><span class="nava"><a href="#menu">メニュー</a></span></div>
+                    <div class="navli"><span class="nava"><a href="#leaf">Leafとは</a></span></div>
+                    <div class="navli"><span class="nava"><a href="#shop">店舗情報</a></span></div>
+                    <div class="navli"><span class="nava"><a href="#recruit">採用情報</a></span></div>
+                </div>
+                <!--navmenu end-->
+            </nav>
+            <nav class="spnav">
+                <div class="navmenu2">
+                    <div class="navli2"><img src="images/logob.png"></div>
+                    <span class="inf2">
+                        <p><a href="#contact">お問い合わせ</a></p>
+                    </span>
+                    <ul>
+                        <li><span class="nava2"><a href="#menu">メニュー</a></span></li>
+                        <li><span class="nava2"><a href="#leaf">Leafとは</a></span></li>
+                        <li><span class="nava2"><a href="#shop">店舗情報</a></span></li>
+                        <li><span class="nava2"><a href="#recruit">採用情報</a></span></li>
+                    </ul>
+                </div>
+                <!--navmenu end-->
+            </nav>
+        </header>
+        <main>
+            <div class="mainimg">
+                <img src="images/slide2.png" alt="カフェLeafの紹介画像">
+            </div><!-- mainimg end -->
+            <div id="app">
+                <section class="recommend">
+                    <div class="recommendbox">
+                        <h1>おすすめメニュー</h1>
+                        <p>今の気分に合わせて、あなたにぴったりのメニューをご紹介します。</p>
+                        <div class="qbox" v-if="status === 1">
+                            <h2>今の気分は？</h2>
+                            <button class="btn" v-on:click="q1('vasty')">がっつり食べたい</button>
+                            <button v-on:click="q1('relax')">ゆっくり落ち着きたい</button>
+                        </div>
+                        <!---------- がっつり ---------->
+                        <div class="qbox" v-if="status === 2">
+                            <h2>何が食べたい？</h2>
+                            <button v-on:click="q2('western')">洋食</button>
+                            <button v-on:click="q2('japanese')">和食</button>
+                        </div>
+                        <!-- 洋食 -->
+                        <div class="qbox" v-if="status === 4">
+                            <h2>好きな食材は？</h2>
+                            <button v-on:click="q4('cheese')">たっぷりチーズ</button>
+                            <button v-on:click="q4('tomato')">たっぷりトマト</button>
+                            <button v-on:click="q4('chicken')">チキンもありかも・・</button>
+                        </div>
+                        <!-- 和食 -->
+                        <div class="qbox" v-if="status === 5">
+                            <h2>どれが好き？</h2>
+                            <button v-on:click="q4('gem')">こだわりの逸品</button>
+                            <button v-on:click="q4('vege')">野菜を採りたい</button>
+                            <button v-on:click="q4('old')">昔ながらの味</button>
+                        </div>
+                        <!---------- ゆっくり ---------->
+                        <div class="qbox" v-if="status === 3">
+                            <h2>何が食べたい？</h2>
+                            <button v-on:click="q3('cake')">ケーキ</button>
+                            <button v-on:click="q3('cafe')">ドリンク</button>
+                        </div>
+                        <!-- ケーキ -->
+                        <div class="qbox" v-if="status === 6">
+                            <h2>好きな味は？</h2>
+                            <button v-on:click="q4('rich')">濃厚な味わい</button>
+                            <button v-on:click="q4('bitter')">ちょっと大人なビター</button>
+                            <button v-on:click="q4('fragrant')">香り豊かな味わい</button>
+                            <button v-on:click="q4('banana')">バナナ！</button>
+                        </div>
+                        <!-- ドリンク -->
+                        <div class="qbox" v-if="status === 7">
+                            <h2>好きな味は？</h2>
+                            <button v-on:click="q4('coffee')">定番のアレ</button>
+                            <button v-on:click="q4('snazzy')">オシャレな味</button>
+                            <button v-on:click="q4('discerning')">こだわりの味</button>
+                            <button v-on:click="q4('mild')">優しい味</button>
+                        </div>
+                        <!---------- 結果 ---------->
+                        <div class="qbox" v-if="status === 8">
+                            <h2>あなたにぴったりなのは…</h2>
+                            <img v-bind:src="image">
+                            <h3>{{ name }}</h3>
+                            <h4>￥{{ price }}</h4>
+                            <p>です！</p>
+                            <button class="reset" v-on:click="reset">もう一度やる</button>
+                        </div>
+                    </div>
+                </section>
+                <section class="menu" id="menu">
+                    <div class="menuwhite">
+                        <h1>メニュー</h1>
+                        <div class="menu_seatch">
+                            <p>表示変更：</p>
+                            <select id="search" v-model="menuOrder">
+                                <option value="all">全ての商品</option>
+                                <option value="lunch">ランチ</option>
+                                <option value="food">フード</option>
+                                <option value="sweets">スウィーツ</option>
+                                <option value="drink">ドリンク</option>
+                            </select>
+                        </div>
+                        <div class="lunch" v-if="menuOrder === 'lunch' | menuOrder === 'all'">
+                            <h2>ランチ</h2>
+                            <figure v-for="lunchItem in lunch" v-bind:key="lunchItem.name">
+                                <img v-bind:src="lunchItem.image" v-bind:alt="lunchItem.name">
+                                <figcaption>
+                                    <h3>{{ lunchItem.name }}</h3>
+                                    <p>{{ lunchItem.desc }}</p>
+                                    <h4>￥{{ lunchItem.price }}</h4>
+                                    <p>{{ lunchItem.annotation }}
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </div><!-- lunch end -->
+                        <div class="food" v-if="menuOrder === 'food' | menuOrder === 'all'">
+                            <h2>フード</h2>
+                            <figure v-for="foodItem in food" v-bind:key="foodItem.name">
+                                <img v-bind:src="foodItem.image" v-bind:alt="foodItem.name">
+                                <figcaption>
+                                    <h3>{{ foodItem.name }}</h3>
+                                    <p>{{ foodItem.desc }}</p>
+                                    <h4>￥{{ foodItem.price }}</h4>
+                                    <p>{{ foodItem.annotation }}
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </div><!-- food end -->
+                        <div class="sweet" v-if="menuOrder === 'sweets' | menuOrder === 'all'">
+                            <h2>スウィーツ</h2>
+                            <figure v-for="sweetsItem in sweets" v-bind:key="sweetsItem.name">
+                                <img v-bind:src="sweetsItem.image" v-bind:alt="sweetsItem.name">
+                                <figcaption>
+                                    <h3>{{ sweetsItem.name }}</h3>
+                                    <p>{{ sweetsItem.desc}}</p>
+                                    <h4>￥{{ sweetsItem.price }}</h4>
+                                    <p>{{ sweetsItem.annotation }}
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </div><!-- sweet end -->
+                        <div class="drink" v-if="menuOrder === 'drink' | menuOrder === 'all'">
+                            <h2>ドリンク</h2>
+                            <figure v-for="drinkItem in drink" v-bind:key="drinkItem.name">
+                                <img v-bind:src="drinkItem.image" v-bind:alt="drinkItem.name">
+                                <figcaption>
+                                    <h3>{{ drinkItem.name }}</h3>
+                                    <h4>￥{{ drinkItem.price }}</h4>
+                                    <p>{{ drinkItem.annotation }}
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </div><!-- drink end -->
+                </section><!-- menu end -->
+            </div>
+            <div class="new">
+                <h1>最新情報</h1>
+                <div class="scroll">
+                    <div class="newcom">
+                        <p><time datetime="2018-10-01">2018年10月1日</time>今年もハロウィンの季節がやってきましたね！<br>
+                        リーフでも暖炉の上に、ハロウィンの飾り付けをしました(*^-^*)
+                        </p>
+                        <p>お食事されながら、ハロウィン気分を味わっていただけたら良いなぁっと思います。</p>
+                    </div>
+                    <div class="newcom">
+                        <p><time datetime="2018-08-11">2018年08月11日</time>夏期休業のお知らせ。<br>
+                        誠に申し訳ございませんが、下記の期間　お休みさせていただきます。
+                        </p>
+                        <p>08月15日～08月17日<br>
+                        尚、08月18日から、通常通り営業しております。</p>
+                    </div>
+                    <div class="newcom">
+                        <p><time datetime="2018-07-22">2018年07月22日</time>お店のテラスなどで、バーベキューが出来るコーナーを設置しました！
+                        </p>
+                        <p>食材やドリンクなど、お持ち込みいただければ<br>
+                        場所代とガス代のみお支払い頂きますので、ご自由にお使い下さいませ。<br>
+                        なお、その際には事前にご連絡下さいませ。
+                        </p>
+                    </div>
+                </div><!-- new end -->
+            </div>
+            <div class="leaf" id="leaf">
+                <div class="leafwhite">
+                    <h1>Leafとは</h1>
+                    <div class="leafimg">
+                        <div class="leafp">
+                            <p class="bigp">素敵な時間を過ごしてほしい</p>
+                            <p class="leftp">私たちは、ご来店いただいたお客様に<br>
+                        木の温もりを感じて頂いたり、窓から<br>
+                        見える自然界の癒しの景色を眺めながら<br>
+                        ホッとして頂けるような空間の提供を<br>
+                        目指しています。</p>
+                            <p class="rightp">空いた時間をお気に入りの時間に。<br>
+                        ドックカフェコーナーもテラスに<br>
+                        あるので可愛い愛犬とご一緒に<br>
+                        お食事をお楽しみいただけます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- leaf end -->
+            <div class="shop" id="shop">
+                <h1>店舗情報</h1>
+                <img src="images/cake.png">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.1312873425413!2d139.37798171460713!3d35.74757773393907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e009793bfae5%3A0xd8d6f698840deeda!2z44CSMjA4LTAwMjEg5p2x5Lqs6YO95q2m6JS15p2R5bGx5biC5LiJ44OE6Jek77yR5LiB55uu77yR77yR77yZ4oiS77yR77yR!5e0!3m2!1sja!2sjp!4v1564368977426!5m2!1sja!2sjp" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="shopinfo">
+                    <p>カフェ『Leaf』</p>
+                    <table>
+                        <tr>
+                            <th>住所</th>
+                            <td>東京都武蔵村山市三ツ藤1-119-11</td>
+                        </tr>
+                        <tr>
+                            <th>TEL</th>
+                            <td>042-569-6509</td>
+                        </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td>月曜～木曜　11：00～20：00<br> 金曜～日曜　11：00～21：00</td>
+                        </tr>
+                        <tr>
+                            <th>定休日</th>
+                            <td>水曜日</td>
+                        </tr>
+                    </table>
+                    <span class="kome">
+                        <p>※駐車場は少し離れた所にあります。</p>
+                    </span>
+                </div>
+            </div><!-- shop end -->
+            <div class="recruit" id="recruit">
+                <div class="recruitwhite">
+                    <!--div class="recruitimg"-->
+                    <h1>採用情報</h1>
+                    <span class="recb">
+                        <p>アルバイト募集中</p>
+                    </span>
+                    <p>カフェ『Leaf』では土日のランチタイムに<br>
+                        働ける仲間を募集中です。
+                    </p>
+                    <p>コーヒーの知識や経験などは問いません。<br>
+                        たくさんのご応募お待ちしております。
+                    </p>
+                    <img src="images/pan.png">
+                    <h2>募集要項</h2>
+                    <table>
+                        <tr>
+                            <th>雇用形態</th>
+                            <td>東京都武蔵村山市三ツ藤1-119-11</td>
+                        </tr>
+                        <tr>
+                            <th>時給</th>
+                            <td>985円～</td>
+                        </tr>
+                        <tr>
+                            <th>休日</th>
+                            <td>平日</td>
+                        </tr>
+                        <tr>
+                            <th>勤務地</th>
+                            <td>武蔵村山市</td>
+                        </tr>
+                        <tr>
+                            <th>年齢</th>
+                            <td>18歳以上</td>
+                        </tr>
+                    </table>
+                    <!--/div-->
+                </div>
+            </div><!-- recruit end -->
+            <div class="contact" id="contact">
+                <div class="hukidashi">
+                    <p>カフェ『Leaf』は様々な会合のプランやママさんランチなども受付ております。<br>
+                    ぜひお気軽にお問い合わせ下さい。</p>
+                </div>
+                <div class="infd">
+                    <img src="images/line.png">
+                    <p><span class="telicon">お問い合わせ・ご予約</span>042-569-6509</p>
+                    <img src="images/line.png">
+                </div>
+            </div><!-- contact end -->
+            <div class="sns">
+                <a href="#"><img src="images/iconi.jpg" alt="インスタグラムのアイコン"></a>
+                <a href="#"><img src="images/iconf.PNG" alt="フェイスブックのアイコン"></a>
+                <a href="#"><img src="images/icona.PNG" alt="アメーバブログのアイコン"></a>
+            </div><!-- sns end -->
+            <div class="top">
+                <a href="#top"><img src="images/topimg.png"></a>
+            </div>
+        </main>
+        <footer>
+            <p><small>Copyright 2017 leaf.cafe6509@gmail.com</small></p>
+        </footer>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</html>

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "チーズケーキ",
+    "desc": "オーナー手作りの濃厚なチーズケーキです。",
+    "price": "500",
+    "annotation": "1",
+    "image": "images/sweet1.jpg"
+  },
+  {
+    "name": "フォンダショコラ",
+    "desc": "オーナー手作りのチョコの味わい深いフォンダショコラです。",
+    "price": "500",
+    "annotation": "1",
+    "image": "images/sweet2.jpg"
+  },
+  {
+    "name": "ダージリンとハーブのケーキ",
+    "desc": "紅茶とハーブの茶葉を入れて焼いたオーナー手作りのハーブケーキです。",
+    "price": "480",
+    "annotation": "1",
+    "image": "images/sweet3.jpg"
+  },
+  {
+    "name": "バナナケーキ",
+    "desc": "オーナー手作りのふんだんにバナナを使ったバナナケーキです。",
+    "price": "450",
+    "annotation": "1",
+    "image": "images/sweet4.jpg"
+  }
+]

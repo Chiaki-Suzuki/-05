@@ -1,0 +1,30 @@
+[
+  {
+    "name": "自家製スープカレー",
+    "desc": "８種類のスパイスを効かせた自家製のスープカレーです。",
+    "price": "900",
+    "annotation": "1",
+    "image": "images/food1.jpg"
+  },
+  {
+    "name": "自家製ドライカレー",
+    "desc": "８種類のスパイスをきかせたカレーを煮詰めてドライカレーにしました。トロっとした半熟卵を乗せたメニューです。",
+    "price": "900",
+    "annotation": "1",
+    "image": "images/food2.jpg"
+  },
+  {
+    "name": "焼きリゾット",
+    "desc": "カルボナーラ風の焼きリゾットとチキンとトマトの焼きリゾットの２種類の味をお楽しみ下さい。",
+    "price": "850",
+    "annotation": "0",
+    "image": "images/food3.jpg"
+  },
+  {
+    "name": "ナポリタン",
+    "desc": "昔ながらの懐かしい味のナポリタンです。",
+    "price": "750",
+    "annotation": "0",
+    "image": "images/food4.jpg"
+  }
+]
