@@ -5,7 +5,7 @@
         <p><a href="#contact">お問い合わせ</a></p>
       </span>
       <div class="navmenu">
-        <div class="navli"><img src="images/logob.png" /></div>
+        <div class="navli"><img src="../assets/images/logob.png" /></div>
         <div class="navli">
           <span class="nava"><a href="#menu">メニュー</a></span>
         </div>
@@ -23,7 +23,7 @@
     </nav>
     <nav class="spnav">
       <div class="navmenu2">
-        <div class="navli2"><img src="images/logob.png" /></div>
+        <div class="navli2"><img src="../assets/images/logob.png" /></div>
         <span class="inf2">
           <p><a href="#contact">お問い合わせ</a></p>
         </span>

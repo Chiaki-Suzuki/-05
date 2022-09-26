@@ -14,7 +14,7 @@
         コーヒーの知識や経験などは問いません。<br />
         たくさんのご応募お待ちしております。
       </p>
-      <img src="images/pan.png" />
+      <img src="../assets/images/pan.png" />
       <h2>募集要項</h2>
       <table>
         <tr>

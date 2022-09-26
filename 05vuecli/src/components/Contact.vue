@@ -7,25 +7,25 @@
       </p>
     </div>
     <div class="infd">
-      <img src="images/line.png" />
+      <img src="../assets/images/line.png" />
       <p><span class="telicon">お問い合わせ・ご予約</span>042-569-6509</p>
-      <img src="images/line.png" />
+      <img src="../assets/images/line.png" />
     </div>
     <!-- sns start -->
     <div class="sns">
       <a href="#"
-        ><img src="images/iconi.jpg" alt="インスタグラムのアイコン"
+        ><img src="../assets/images/iconi.jpg" alt="インスタグラムのアイコン"
       /></a>
       <a href="#"
-        ><img src="images/iconf.PNG" alt="フェイスブックのアイコン"
+        ><img src="../assets/images/iconf.png" alt="フェイスブックのアイコン"
       /></a>
       <a href="#"
-        ><img src="images/icona.PNG" alt="アメーバブログのアイコン"
+        ><img src="../assets/images/icona.png" alt="アメーバブログのアイコン"
       /></a>
     </div>
     <!-- sns end -->
     <div class="top">
-      <a href="#top"><img src="images/topimg.png" /></a>
+      <a href="#top"><img src="../assets/images/topimg.png" /></a>
     </div>
   </div>
   <!-- contact end -->

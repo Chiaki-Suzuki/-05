@@ -1,7 +1,7 @@
 <template>
   <div class="shop" id="shop">
     <h1>店舗情報</h1>
-    <img src="images/cake.png" />
+    <img src="../assets/images/cake.png" />
     <div class="map">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.1312873425413!2d139.37798171460713!3d35.74757773393907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e009793bfae5%3A0xd8d6f698840deeda!2z44CSMjA4LTAwMjEg5p2x5Lqs6YO95q2m6JS15p2R5bGx5biC5LiJ44OE6Jek77yR5LiB55uu77yR77yR77yZ4oiS77yR77yR!5e0!3m2!1sja!2sjp!4v1564368977426!5m2!1sja!2sjp"

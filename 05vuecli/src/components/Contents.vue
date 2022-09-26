@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="mainimg">
-      <img src="images/slide2.png" alt="カフェLeafの紹介画像">
+      <img src="../assets/images/slide2.png" alt="カフェLeafの紹介画像">
     </div>
     <Recommend></Recommend>
     <Menu></Menu>
