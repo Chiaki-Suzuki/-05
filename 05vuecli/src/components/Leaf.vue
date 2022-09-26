@@ -94,9 +94,10 @@ export default {
     font-size: 1em;
     margin: 0 auto 4%;
     width: 70%;
+    text-align: center !important;
   }
   .leftp {
-    margin: 0 auto 2%;
+    margin: 0 auto 10%;
     width: 85%;
   }
   .rightp {

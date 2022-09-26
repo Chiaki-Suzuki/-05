@@ -145,10 +145,10 @@ nav img {
   }
   header {
     width: 100%;
-    height: 145px;
+    height: 200px;
   }
   nav img {
-    margin: 0 auto 12px auto;
+    margin: 0 auto 5px auto;
     text-align: center;
     display: block;
   }

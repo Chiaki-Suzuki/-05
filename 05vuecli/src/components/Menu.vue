@@ -158,10 +158,6 @@ export default {
   SP
 -------------------------*/
 @media screen and (max-width: 767px) {
-  .menu{
-    margin: 20px auto 0 auto;
-  }
-
   .menu figure{
     height:auto;
   }

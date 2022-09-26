@@ -49,6 +49,7 @@ module.exports = {
     'vue/no-deprecated-v-on-native-modifier': 'off',
     'vue/no-deprecated-filter': 'off',
     'vue/require-v-for-key': 'off',
+    'vue/require-component-is': 'off',
     'vue/no-use-v-if-with-v-for': 'off'
   },
 };

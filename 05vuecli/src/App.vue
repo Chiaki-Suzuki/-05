@@ -1,5 +1,35 @@
 <template>
   <div id="app">
+    <component is="style">
+      h1:before {
+        content: url(/images/iconmin.png);
+        position: relative;
+        top: 5px;
+        margin-right: 5px;
+      }
+
+      h2:after {
+        content: url(/images/lines.png);
+        position: relative;
+        bottom: 4px;
+        margin: 0 10px 0 20px;
+      }
+
+      h2:before {
+        content: url(/images/lines.png);
+        position: relative;
+        bottom: 4px;
+        margin: 0 20px 0 10px;
+      }
+      @media screen and (max-width: 768px) {
+        h2::before,
+        h2::after {
+          content: url(images/linemin.png);
+          position: relative;
+          bottom: 4px;
+        }
+      }
+    </component>
     <Header></Header>
     <Contents></Contents>
     <Footer></Footer>
@@ -17,7 +47,7 @@ export default {
     Header,
     Contents,
     Footer,
-  },
+  }
 };
 </script>
 
@@ -27,6 +57,7 @@ export default {
 -------------------------*/
 body {
   margin: 0;
+  line-height: 1;
 }
 
 ul, ol {
@@ -37,33 +68,13 @@ ul, ol {
 
 p {
   color: #2b1f12;
+  margin: 0;
 }
 
 h1 {
   color: #2b1f12;
   font-size: 2em;
   margin: 10px;
-}
-
-h1:before {
-  /* content: url(/images/iconmin.png); */
-  position: relative;
-  top: 5px;
-  margin-right: 5px;
-}
-
-h2:after {
-  /* content: url(/images/lines.png); */
-  position: relative;
-  bottom: 4px;
-  margin: 0 10px 0 20px;
-}
-
-h2:before {
-  /* content: url(/images/lines.png); */
-  position: relative;
-  bottom: 4px;
-  margin: 0 20px 0 10px;
 }
 
 h3 {
@@ -114,32 +125,12 @@ td {
   zoom: 1;
 }
 
-/* For IE 6/7 */
-.mainimg {
-  width: 100%;
-}
-
-.mainimg img {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width: 100%;
-  height: 60%;
-}
-
 /*-------------------------
   SP
 -------------------------*/
 @media screen and (max-width:767px) {
 h1{
     font-size: 1.6em;
-}
-
-h2:after {
-    /* content: url(/images/linemin.png); */
-}
-h2:before {
-    /* content: url(/images/linemin.png); */
 }
 
 th{

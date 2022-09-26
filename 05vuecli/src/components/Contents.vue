@@ -37,4 +37,24 @@ export default {
 </script>
 
 <style>
+.mainimg {
+  width: 100%;
+}
+
+.mainimg img {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  height: 60%;
+}
+
+@media screen and (max-width: 768px) {
+  .mainimg img {
+    display: block;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+}
 </style>
