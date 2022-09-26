@@ -20,7 +20,7 @@
             <h3>{{ lunchItem.name }}</h3>
             <p>{{ lunchItem.desc }}</p>
             <h4>￥{{ lunchItem.price }}</h4>
-            <p>{{ lunchItem.annotation }}
+            <p>{{ annotationDisp(lunchItem.annotation, lunchAnno) }}
             </p>
           </figcaption>
         </figure>
@@ -33,7 +33,7 @@
             <h3>{{ foodItem.name }}</h3>
             <p>{{ foodItem.desc }}</p>
             <h4>￥{{ foodItem.price }}</h4>
-            <p>{{ foodItem.annotation }}
+            <p>{{ annotationDisp(foodItem.annotation, foodAnno) }}
             </p>
           </figcaption>
         </figure>
@@ -46,7 +46,7 @@
             <h3>{{ sweetsItem.name }}</h3>
             <p>{{ sweetsItem.desc}}</p>
             <h4>￥{{ sweetsItem.price }}</h4>
-            <p>{{ sweetsItem.annotation }}
+            <p>{{ annotationDisp(sweetsItem.annotation, sweetsAnno) }}
             </p>
           </figcaption>
         </figure>
@@ -58,7 +58,7 @@
           <figcaption>
             <h3>{{ drinkItem.name }}</h3>
             <h4>￥{{ drinkItem.price }}</h4>
-            <p>{{ drinkItem.annotation }}
+            <p>{{ annotationDisp(drinkItem.annotation, drinkAnno) }}
             </p>
           </figcaption>
         </figure>
@@ -68,8 +68,38 @@
 </template>
 
 <script>
+import lunch from '../assets/json/lunch'
+import food from '../assets/json/food'
+import sweets from '../assets/json/sweets'
+import drink from '../assets/json/drink'
+
 export default {
-  name: 'Drink',
+  name: 'Menu',
+  data: () => {
+    return {
+      lunch: lunch,
+      lunchAnno: '※プラス200円でコーヒーまたは紅茶が付きます。',
+      food: food,
+      foodAnno: '※ランチタイムにはプラス200円でコーヒーまたは紅茶が付きます。',
+      sweets: sweets,
+      sweetsAnno: '※ケーキを注文されたお客様は、プラス200円でコーヒーまたは紅茶が付きます。',
+      drink: drink,
+      drinkAnno: '※200円でおかわりができます。',
+      menuOrder: 'all',
+    }
+  },
+  methods: {
+    annotationDisp: function (anno, words) {
+      // 注釈を表示
+      if (anno === '1') {
+        return words;
+      }
+      // 注釈なし
+      else if (anno === '0') {
+        return '';
+      }
+    },
+  }
 };
 </script>
 
@@ -159,6 +189,7 @@ export default {
 -------------------------*/
 @media screen and (max-width: 767px) {
   .menu figure{
+    display: block;
     height:auto;
   }
 
@@ -172,7 +203,7 @@ export default {
   }
 
   .drink h3{
-    width: 400px;
+    width: 100%;
   }
 
   .drink p{

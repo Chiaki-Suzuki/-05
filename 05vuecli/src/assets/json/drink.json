@@ -1,0 +1,26 @@
+[
+  {
+    "name": "コーヒー",
+    "price": "380",
+    "annotation": "1",
+    "image": "images/drink1.jpg"
+  },
+  {
+    "name": "ラベンダーティー",
+    "price": "530",
+    "annotation": "0",
+    "image": "images/drink2.jpg"
+  },
+  {
+    "name": "手作りジンジャエール",
+    "price": "480",
+    "annotation": "0",
+    "image": "images/drink3.jpg"
+  },
+  {
+    "name": "カフェラテ",
+    "price": "520",
+    "annotation": "0",
+    "image": "images/drink4.jpg"
+  }
+]
